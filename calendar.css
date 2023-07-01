@@ -6,11 +6,27 @@
 i {
     cursor: pointer;
 }
+ul {
+    list-style: none;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    background-color: rgb(221, 217, 217);
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 15px;
+    background-color: rgb(22, 217, 217)
+}
+
 .hide-element {
     display: none !important;
 }
+
 .bg-container {
-    height: 100vh;
     min-height: 100vh;
     display: flex;
     flex-flow: column;
@@ -19,93 +35,103 @@ i {
     background-image: linear-gradient(240deg,rgb(106, 106, 239),white);
     border: 3px solid red;
 }
+
 .warning {
     border: 1px solid;
 }
+
 .main-container {
     display: flex;
     flex-flow: row wrap;
     justify-content:center;
-    gap: 25px;
-    width: 98%;
-    padding: 8px;
-    border: 1px solid;
+    gap: 1.3rem;
+    width: 100%;
+    padding: 1em;
+    border: 5px solid green;
 }
 
 .calendar-container {
     border: 1px solid rgb(195, 191, 191);
     border-radius: 15px;
-    max-width: 700px;
+    max-width: 45rem;
     background-color:rgba(245, 245, 245, 0.9);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 0.8rem;
 }
+
 .calendar-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding:17px;
-    margin-bottom: 20px;
+    padding:1em;
+    border: 1px solid #000;
 }
+
+.calendar-header > ul {
+    display: flex;
+    border: 1px solid #000;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
 #prevBtn:active {
     background-color: rgb(123, 214, 222);
     padding: 8px;
     color: white;
     border-radius: 20px;
 }
+
+.current-month {
+    font-size: 2.3rem;
+    margin: 5px;
+}
+
+.current-year {
+    font-size: 1.6rem;
+}
+
 #nextBtn:active {
     background-color: rgb(123, 214, 222);
     padding: 8px;
     color: white;
     border-radius: 20px;
 }
-.current-month {
-    font-size: 2.3rem;
-    margin: 5px;
-}
-.current-year {
-    font-size: 1.6rem;
-}
-.current-month-dates {
-    background-color: white;
-}
-.current-date {
-    background-color: rgb(180, 255, 255);
-    border-radius: 5px;
-}
-.calendar-body {
-    padding: 0px 10px;
-    border: 1px solid;
-    transition: all 1s;
-}
-.calendar-body ul {
-    display: flex;
-    flex-wrap: wrap;
 
+.calendar-body {
+    border: 1px solid;
 }
-ul {
-    list-style: none;
-}
+
 .calendar-body ul li {
     width: calc((100% - 70px) / 7);
     text-align: center;
     border-radius: 5px;
     margin: 5px;
 }
+
 .calendar-days {
     margin-bottom: 25px;
     font-size: 1.08rem;
+    display: flex;
 }
+
+.calendar-dates {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .calendar-dates li{
     padding: 8px 0px;
     cursor: pointer;
 }
+
 .calendar-dates li:hover{
     /* background-color: rgb(212, 209, 209); */
     border-radius: 5px;
     box-shadow: 5px 6px 6px rgb(185, 185, 185);
 }
+
 .form-container {
     margin: 12px 0px;
     display: flex;
@@ -114,12 +140,14 @@ ul {
     gap: 10px;
     padding: 5px;
 }
+
 .input-box {
     width: 45%;
     max-width: 300px;
     display: flex;
     gap: 13px;
 }
+
 #inputDate {
     padding: 10px;
     width: 70%;
@@ -128,6 +156,7 @@ ul {
     border-radius: 8px;
     border: 1px solid rgb(220, 212, 212);
 }
+
 .go-btn {
     background-color: aqua;
     border: none;
@@ -137,26 +166,12 @@ ul {
     cursor: pointer;
     border-radius: 8px;
 }
+
 #todayBtn {
     background-color: aqua;
     border-radius: 8px;
     padding: 10px 15px;
     cursor: pointer;
-}
-.prev-dates {
-    color:rgb(155, 153, 153);
-}
-.next-month-sunday {
-    color: rgb(255, 133, 133);
-}
-.sunday {
-    color: rgb(227, 25, 25);
-}
-.focused-date {
-    border: 1px solid rgb(155, 151, 151);
-}
-.selected-date {
-    border: 1px solid grey;
 }
 
 .add-event-container {
@@ -168,6 +183,7 @@ ul {
     gap: 10px;
     background-color: transparent;
 }
+
 .list-of-event {
     display: none;
     color: black;
@@ -177,16 +193,15 @@ ul {
     scroll-behavior: smooth;
     border: 1px solid;
 }
-::-webkit-scrollbar {
-    width: 6px;
-    background-color: rgb(221, 217, 217);
-    border-radius: 15px;
+
+.add-event-input-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
 }
-::-webkit-scrollbar-thumb {
-    background-color: black;
-    border-radius: 15px;
-    background-color: rgb(22, 217, 217)
-}
+
 #addEventInputEl {
     border-radius: 30px;
     padding: 13px;
@@ -195,29 +210,59 @@ ul {
     border: 1px solid rgb(220, 212, 212);
 }
 
-#addEventPlusIcon{
-    font-size: 30px;
-    color: rgb(22, 217, 217);
-}
 .add-event-button {
     background-color: transparent;
     border: none;
 }
-.event {}
+
+
+#addEventPlusIcon{
+    font-size: 30px;
+    color: rgb(22, 217, 217);
+}
+
 #confirmEventCheckIcon {
     font-size: 30px;
     color: rgb(22, 217, 217);
 }
+
+/*CSS for JS*/
+
+.current-month-dates {
+    background-color: white;
+}
+
+.current-date {
+    background-color: rgb(180, 255, 255);
+    border-radius: 5px;
+}
+
+.prev-dates {
+    color:rgb(155, 153, 153);
+}
+
+.next-month-sunday {
+    color: rgb(255, 133, 133);
+}
+
+.sunday {
+    color: rgb(227, 25, 25);
+}
+
+.focused-date {
+    border: 1px solid rgb(155, 151, 151);
+}
+
+.selected-date {
+    border: 1px solid grey;
+}
+
+.event {}
+
 .confirm-event-check-btn-disabled {
     color: grey !important;
 } 
-.add-event-input-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-}
+
 @media (min-width:1165px) {
     .add-event-container {
         /* align-self: stretch; */
@@ -225,10 +270,12 @@ ul {
         border-radius: 15px;
         padding: 10px;
     }
+    
     .list-of-event {
         display: block;
         /* flex-grow: 0; */
     }
+    
     .add-event-input-box {
     }
 }
